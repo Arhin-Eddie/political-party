@@ -1,0 +1,24 @@
+# Node / Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+package-lock.json
+pnpm-lock.yaml
+
+# Composer
+vendor/
+*.log
+
+# Environments
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
