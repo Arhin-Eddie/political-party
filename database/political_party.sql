@@ -13,7 +13,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `political_party`
 --
-CREATE DATABASE IF NOT EXISTS `political_party` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `political_party` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `political_party`;
 
 -- --------------------------------------------------------
@@ -22,12 +22,13 @@ USE `political_party`;
 -- Table structure for table `admins`
 --
 
+DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admins`
@@ -43,6 +44,7 @@ INSERT INTO `admins` (`id`, `username`, `password_hash`, `created_at`) VALUES
 -- Table structure for table `contact_messages`
 --
 
+DROP TABLE IF EXISTS `contact_messages`;
 CREATE TABLE `contact_messages` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -52,7 +54,7 @@ CREATE TABLE `contact_messages` (
   `message` text NOT NULL,
   `status` enum('Unread','Read','Resolved') NOT NULL DEFAULT 'Unread',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `contact_messages`
@@ -68,6 +70,7 @@ INSERT INTO `contact_messages` (`id`, `name`, `email`, `phone`, `subject`, `mess
 -- Table structure for table `events`
 --
 
+DROP TABLE IF EXISTS `events`;
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
@@ -78,7 +81,7 @@ CREATE TABLE `events` (
   `image` varchar(255) DEFAULT NULL,
   `status` enum('Upcoming','Completed','Cancelled') NOT NULL DEFAULT 'Upcoming',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
@@ -95,6 +98,7 @@ INSERT INTO `events` (`id`, `title`, `description`, `event_date`, `event_time`, 
 -- Table structure for table `leadership`
 --
 
+DROP TABLE IF EXISTS `leadership`;
 CREATE TABLE `leadership` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -102,7 +106,7 @@ CREATE TABLE `leadership` (
   `biography` text NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `leadership`
@@ -119,6 +123,7 @@ INSERT INTO `leadership` (`id`, `name`, `position`, `biography`, `image`, `creat
 -- Table structure for table `members`
 --
 
+DROP TABLE IF EXISTS `members`;
 CREATE TABLE `members` (
   `id` int(11) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -130,7 +135,7 @@ CREATE TABLE `members` (
   `membership_type` varchar(50) NOT NULL,
   `status` enum('Pending','Approved','Rejected') NOT NULL DEFAULT 'Pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `members`
@@ -146,6 +151,7 @@ INSERT INTO `members` (`id`, `first_name`, `last_name`, `email`, `phone`, `addre
 -- Table structure for table `news`
 --
 
+DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
@@ -153,7 +159,7 @@ CREATE TABLE `news` (
   `image` varchar(255) DEFAULT NULL,
   `published_at` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `news`
@@ -169,11 +175,12 @@ INSERT INTO `news` (`id`, `title`, `content`, `image`, `published_at`, `created_
 -- Table structure for table `settings`
 --
 
+DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
   `setting_key` varchar(50) NOT NULL,
   `setting_value` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `settings`
