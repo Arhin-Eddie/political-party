@@ -1,0 +1,108 @@
+/* assets/css/admin.css */
+/* Inherits from style.css, overriding/adding admin specific styles */
+
+body {
+    background-color: var(--surface-color);
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+    transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 1.5rem 1.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#sidebar-wrapper .list-group {
+    width: 250px;
+}
+
+#sidebar-wrapper .list-group-item {
+    padding: 1rem 1.25rem;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.2s;
+    border-radius: 0;
+}
+
+#sidebar-wrapper .list-group-item:hover,
+#sidebar-wrapper .list-group-item.active {
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    border-right: 3px solid var(--primary-color);
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+    width: 100%;
+}
+
+/* Restrained Cards */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: none !important; /* Overriding heavy bootstrap shadows */
+    background-color: var(--bg-color);
+}
+
+.card-header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.card-footer {
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Admin Tables */
+.table {
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border-color);
+    background-color: var(--surface-color);
+    padding: 1rem;
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Top Navbar */
+.admin-navbar {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+}
