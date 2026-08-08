@@ -234,6 +234,21 @@ a:hover {
     object-fit: cover;
     margin-bottom: 1rem;
     border-radius: var(--border-radius-md);
+    transition: opacity 0.3s ease;
+}
+
+.editorial-list-item:hover .editorial-img {
+    opacity: 0.9;
+}
+
+.editorial-title a {
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.editorial-list-item:hover .editorial-title a {
+    color: var(--primary-color) !important;
+    transform: translateX(4px);
 }
 
 /* News Grid (Minimal) */
@@ -247,6 +262,11 @@ a:hover {
     object-fit: cover;
     margin-bottom: 1rem;
     border-radius: var(--border-radius-md);
+    transition: transform 0.4s ease;
+}
+
+.news-item:hover .news-img {
+    transform: scale(1.02);
 }
 
 /* Clean Containers */
@@ -255,6 +275,11 @@ a:hover {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     padding: 2rem 1.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.clean-container:hover {
+    border-color: var(--text-muted);
 }
 
 /* Footer */
