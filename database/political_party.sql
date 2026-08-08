@@ -35,7 +35,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password_hash`, `created_at`) VALUES
-(1, 'admin', '$2y$10$wM4K.1n0j2P/.W8M0rM5O.G60z5Q5a98/ZkZ1qKj1vO.q.o3v5yW6', '2024-05-15 10:00:00');
+(1, 'admin', '$2y$10$ww6kY/Uuy.PvO.4ju2NvUeOKl7yMji38QwDK5KyCAtSAZ1StUWHie', '2024-05-15 10:00:00');
 
 -- --------------------------------------------------------
 
